@@ -6,33 +6,31 @@ Requirements
  * R (>=3.0)
  * bio3d R package (>=2.3-4; http://thegrantlab.org/bio3d/)
  * igraph R package (>=1.1.1; http://igraph.org/r/)
-
-Optional:
- * VMD (>=1.9.3; http://www.ks.uiuc.edu/Research/vmd/)
+ * VMD [Optional] (>=1.9.3; http://www.ks.uiuc.edu/Research/vmd/)
 
 
 Quick Start
 ===========
- * Calculate contact statistics from MD simulations
-   cd contact
-   make 
-   (Edit "mdlist" file to match your case; See contact/readme for details)
-   ./creat_mean_contact.sh mdlist 4   
-   (NOTE: "4" indicates the number of cores to use and can be adjusted)
-   cd ..
+ ## Calculate contact statistics from MD simulations
+   * cd contact
+   * make 
+   * (Edit "mdlist" file to match your case; See contact/readme for details)
+   * ./creat_mean_contact.sh mdlist 4   
+   * (NOTE: "4" indicates the number of cores to use and can be adjusted)
+   * cd ..
 
- * 2. Residue wise difference contact network
-   cd bar
-   (Edit "run_bar.r" file to match your case)
-   Rscript run_bar.r
-   (To visualize results, open files with VMD: vmd -e bar.vmd)
-   cd ..
+ ## Residue wise difference contact network
+   * cd bar
+   * (Edit "run_bar.r" file to match your case)
+   * Rscript run_bar.r
+   * (To visualize results, open files with VMD: vmd -e bar.vmd)
+   * cd ..
 
- * Community analysis
-   cd community
-   (Edit "run_community_analysis.r" to match your case)
-   R 
-   (In the R session, type "source('run_community_analysis.r')"
-   (Adjust the plot in the poped-up window and save it as a pdf/eps file; Optionally, try commented out lines in the bottom of "run_community_analysis.r" for alternative ways to plot and for modularity evaluations)
-   (To visualize results, open files with VMD in a linux shell (color the protein by chain IDs): vmd network.pdb. NOTE: you may need to append the content in the community/append.vmdrc file to ~/.vmdrc; otherwise, colors in the VMD graphic may not match those in the R plot window)
-   cd ..
+ ## Community analysis
+   * cd community
+   * (Edit "run_community_analysis.r" to match your case)
+   * R 
+   * (In the R session, type "source('run_community_analysis.r')"
+   * (Adjust the plot in the poped-up window and save it as a pdf/eps file; Optionally, try commented out lines in the bottom of "run_community_analysis.r" for alternative ways to plot and for modularity evaluations)
+   * (To visualize results, open files with VMD in a linux shell (color the protein by chain IDs): vmd network.pdb. NOTE: you may need to append the content in the community/append.vmdrc file to ~/.vmdrc; otherwise, colors in the VMD graphic may not match those in the R plot window)
+   * cd ..
