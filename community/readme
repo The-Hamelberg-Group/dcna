@@ -1,0 +1,16 @@
+You need following software installed:
+ * R (>3.0)
+ * bio3d and related R packages
+
+Input files:
+ * contact statistics files directly obtained from 'creat_mean_contact.sh'
+   (e.g. the 'free' and 'cis' files under this directory.)
+ * a pdb file matching the contact results
+
+How to run:
+ * copy the content of the 'append.vmdrc' file and paste it at the end of your ~/.vmdrc file
+ * open 'run_community_analysis.r', modify the parameters to fit your case
+ * start an R session by typing `R` and return in a linux shell
+ * in the R session, type `source('run_community_analysis.r')`
+ * adjust the plot in the poped-up window and save it as a pdf/eps file
+ * in linux, type `vmd network.pdb -e network.vmd` to show communities in 3D.

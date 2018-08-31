@@ -1,0 +1,7 @@
+# patch to map color to chain ID by alphabet order (not the order in pdb)
+set letters {A B C D E F G H I J K L M N O P Q R S T U V W X Y Z}
+set chs [colorinfo category Chain]
+foreach ch [lsort $chs] {
+   color Chain $ch [lsearch $letters $ch]
+}
+

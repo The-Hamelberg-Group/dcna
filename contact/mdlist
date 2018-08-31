@@ -1,0 +1,4 @@
+/path_to_topology/cypa_wt_nowater.prmtop
+/path_to_trajectory/production.A.mdcrd
+/path_to_trajectory/production.B.mdcrd
+/path_to_trajectory/production.C.mdcrd

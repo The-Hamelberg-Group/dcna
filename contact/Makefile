@@ -1,0 +1,8 @@
+all: creat_mean_contact_v5_ncdump  generate_per_frame_contact_v4_ncdump
+
+creat_mean_contact_v5_ncdump : creat_mean_contact_v5_ncdump.cpp
+	g++ creat_mean_contact_v5_ncdump.cpp -o creat_mean_contact_v5_ncdump 
+generate_per_frame_contact_v4_ncdump : generate_per_frame_contact_v4_ncdump.cpp
+	g++ generate_per_frame_contact_v4_ncdump.cpp -o generate_per_frame_contact_v4_ncdump
+clean:
+	rm -f creat_mean_contact_v5_ncdump generate_per_frame_contact_v4_ncdump
