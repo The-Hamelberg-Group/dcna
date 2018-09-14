@@ -47,7 +47,7 @@ vmd.cylinder <- function(edges, pdb, file="cylinder", cutoff=0.1, scale=1.0) {
           }
         }
     } else {
-        cat("draw color blue\n", file=vmdfile, append=TRUE)
+        cat("draw color white\n", file=vmdfile, append=TRUE)
         inds <- which(edges[, 3] >= cutoff)
         if(length(inds)>0) {
           for(i in 1:length(inds)) {
@@ -60,18 +60,18 @@ vmd.cylinder <- function(edges, pdb, file="cylinder", cutoff=0.1, scale=1.0) {
           }
         }
 
-        cat("draw color red\n", file=vmdfile, append=TRUE)
-        inds <- which(edges[, 3] < cutoff)
-        if(length(inds)>0) {
-          for(i in 1:length(inds)) {
-              a <- edges[inds[i], 1]
-              b <- edges[inds[i], 2]
-              val <- edges[inds[i], 3]
-              cat("draw cylinder {", paste(xyz[atom2xyz(a)], collapse=" "), 
-                "} {", paste(xyz[atom2xyz(b)], collapse=" "), "} radius ",
-                abs(val)*scale, " resolution 20 filled 0\n", file=vmdfile, append=TRUE)
-          }
-        }
+#        cat("draw color red\n", file=vmdfile, append=TRUE)
+#        inds <- which(edges[, 3] < cutoff)
+#        if(length(inds)>0) {
+#          for(i in 1:length(inds)) {
+#              a <- edges[inds[i], 1]
+#              b <- edges[inds[i], 2]
+#              val <- edges[inds[i], 3]
+#              cat("draw cylinder {", paste(xyz[atom2xyz(a)], collapse=" "), 
+#                "} {", paste(xyz[atom2xyz(b)], collapse=" "), "} radius ",
+#                abs(val)*scale, " resolution 20 filled 0\n", file=vmdfile, append=TRUE)
+#          }
+#        }
         # cols <- colorRamp(c("white", "blue"))
         # inds <- which(edges[, 3] > cutoff)
         # cat("set color_start [colorinfo num]\n", file=vmdfile, append=TRUE)
