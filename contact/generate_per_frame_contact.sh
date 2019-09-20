@@ -69,7 +69,8 @@ cpptraj $top < __tmp_cpptraj0.in > /dev/null
 
 ## - renumber residues in the pdb file
 grep '^ATOM' __tmp_top.pdb | cut -c-22 > __tmp_top0.pdb
-grep '^ATOM' __tmp_top.pdb | cut -c23-26 | awk 'NR==1{a=$1} {printf "%4d\n", $1-a+1}' > __tmp_top1.pdb
+#grep '^ATOM' __tmp_top.pdb | cut -c23-26 | awk 'NR==1{a=$1} {printf "%4d\n", $1-a+1}' > __tmp_top1.pdb
+grep '^ATOM' __tmp_top.pdb | cut -c23-26 | awk 'BEGIN{a=0; rpre=-999} $1!=rpre{a=a+1; rpre=$1} {printf "%4d\n", a}' > __tmp_top1.pdb
 grep '^ATOM' __tmp_top.pdb | cut -c27- | paste -d '' __tmp_top0.pdb __tmp_top1.pdb - > __tmp_top2.pdb
 mv __tmp_top2.pdb __tmp_top.pdb
 
