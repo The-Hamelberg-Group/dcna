@@ -33,10 +33,20 @@ cleanup=yes
 # Keep stipped trajectory files?
 keeptraj=no
 
+# Amber mask to center
+# IMPORTANT NOTE: 
+#     Specify the residue range for centering 
+#     if your system is a complex!
+center=""
+#center=":1-165"
 
 ###################################
 ## DO NOT CHANGE FOLLOWING LINES ##
 ###################################
+
+if test -z "$center"; then
+   center="!:WAT,Na+,Cl-,K+"
+fi
 
 top=$( sed -n '1'p $1 )
 files=( $( sed -n '2,$'p $1 ) )
@@ -62,7 +72,7 @@ echo "strip @H*" >> __tmp_cpptraj0.in
 if test ! -z $strip2; then 
   echo "strip $strip2" >> __tmp_cpptraj0.in
 fi
-echo "center !:WAT,Na+,Cl-,K+" >> __tmp_cpptraj0.in
+echo "center $center" >> __tmp_cpptraj0.in
 echo "image center familiar" >> __tmp_cpptraj0.in
 echo "trajout __tmp_top.pdb pdb nobox" >> __tmp_cpptraj0.in
 cpptraj $top < __tmp_cpptraj0.in > /dev/null
@@ -130,7 +140,7 @@ echo "strip @H*" >> __tmp_cpptraj.in
 if test ! -z $strip2; then 
   echo "strip $strip2" >> __tmp_cpptraj.in
 fi
-echo "center !:WAT,Na+,Cl-,K+" >> __tmp_cpptraj.in
+echo "center $center" >> __tmp_cpptraj.in
 echo "image center familiar" >> __tmp_cpptraj.in
 #echo "trajout __tmp_top.pdb pdb nobox start 1 stop 1" >> __tmp_cpptraj.in
 
