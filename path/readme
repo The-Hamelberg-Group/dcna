@@ -1,17 +1,15 @@
-Requirements
-============
-You need following software installed:
+# Requirements
+## You need the following software installed:
  * R (>3.0)
  * bio3d.core, bio3d.cna, and their dependent R packages (Dependent packages will be installed automatically)
    (Check out https://bitbucket.org/Grantlab/bio3d for how to install the Bio3D family packages)
 
-and also pre-calculated input files:
+## You need the following pre-calculated input files:
  * contact statistics files directly obtained from 'creat_mean_contact.sh'
    (e.g. the 'free' and 'cis' files under the example directory.)
  * a pdb file matching the contact results
 
-How to run:
-==========
+# How to run:
  * open 'run_path_analysis.r', modify the file names (and optionally parameters) to fit your case.
  * In a shell terminal, start an R session by typing `R` and return.
  * In the R session, type `source('run_path_analysis.r')`.
