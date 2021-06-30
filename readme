@@ -34,3 +34,7 @@ Quick Start
  * (Adjust the plot in the poped-up window and save it as a pdf/eps file; Optionally, try commented out lines in the bottom of "run_community_analysis.r" for alternative ways to plot and for modularity evaluations)
  * (To visualize results, open files with VMD in a linux shell (color the protein by chain IDs): vmd network.pdb. NOTE: you may need to append the content in the community/append.vmdrc file to ~/.vmdrc; otherwise, colors in the VMD graphic may not match those in the R plot window)
  * cd ..
+
+## Suboptimal path analysis
+ * cd path
+ * check out the "readme" file for instructions
