@@ -18,6 +18,6 @@
  * A quick (and rough) graph representation of node degeneracy and path length distribution can be obtained by:
      `plot(pa, pdb=pdb)`
  * 3D view of paths is enabled with VMD:
-    * Before quiting R, save the result for future uses (e.g., save(pa, file="pa.RData")).
+    * Before quiting R, save the result for future uses (e.g., `save(pa, file="pa.RData")`).
     * In a shell terminal, type `vmd` and return to open VMD.
     * In the VMD terminal, type `source paths.vmd` (the .vmd filename is set in the run_path_analysis.r file)
