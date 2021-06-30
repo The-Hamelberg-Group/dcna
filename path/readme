@@ -1,0 +1,22 @@
+You need following software installed:
+ * R (>3.0)
+ * bio3d.core, bio3d.cna, and their dependent R packages (Dependent packages will be installed automatically)
+   (Check out https://bitbucket.org/Grantlab/bio3d for how to install the Bio3D family packages)
+
+Input files:
+ * contact statistics files directly obtained from 'creat_mean_contact.sh'
+   (e.g. the 'free' and 'cis' files under the example directory.)
+ * a pdb file matching the contact results
+
+How to run:
+ * open 'run_path_analysis.r', modify the file names (and optionally parameters) to fit your case.
+ * In a shell terminal, start an R session by typing `R` and return.
+ * In the R session, type `source('run_path_analysis.r')`.
+ * The last printed on the screen is a table showing node degeneracy values. You can reproduce it by typing:
+     print(pa, pdb=pdb)
+ * A quick (and rough) graph representation of node degeneracy and path length distribution can be obtained by:
+     plot(pa, pdb=pdb)
+ * 3D view of paths is enabled with VMD:
+   - Before quiting R, save the result for future uses (e.g., save(pa, file="pa.RData")).
+   - In a shell terminal, type `vmd` and return to open VMD.
+   - In the VMD terminal, type `source paths.vmd` (the .vmd filename is set in the run_path_analysis.r file)

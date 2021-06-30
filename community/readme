@@ -4,7 +4,7 @@ You need following software installed:
 
 Input files:
  * contact statistics files directly obtained from 'creat_mean_contact.sh'
-   (e.g. the 'free' and 'cis' files under this directory.)
+   (e.g. the 'free' and 'cis' files under the example directory.)
  * a pdb file matching the contact results
 
 How to run:
