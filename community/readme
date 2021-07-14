@@ -13,5 +13,9 @@
  * Open 'run_community_analysis.r', modify the parameters to fit your case
  * Start an R session by typing `R` and return in a linux shell
  * In the R session, type `source('run_community_analysis.r')`
- * Adjust the plot in the poped-up window and save it as a pdf/eps file
+ * Adjust the plot in the poped-up window; Keep the window open
+ * Save the layout of community you just made in the interactive plotting window by following the commented commands in the script
+ * Test the layout by replotting the communities in the regular way (following the commented commands in the script)
+ * You may also adjust the vertex/edge size or the number of communities by following the commented commands in the script
+ * Use regular ways of R to save the plot. For example, put `pdf(file="plot.pdf", height=4, width=4)` and `dev.off()` before and after calling the `plot_community()` function
  * In linux, type `vmd network.pdb -e network.vmd` to show communities in 3D.
