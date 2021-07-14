@@ -3,9 +3,11 @@ Requirements
  * Linux (CentOS 7.3 or similar)
  * gcc (>=4.8.5)
  * AmberTools (2014 or above; http://ambermd.org/)
- * R (>=3.0)
- * bio3d R package (>=2.3-4; http://thegrantlab.org/bio3d/)
- * igraph R package (>=1.1.1; http://igraph.org/r/)
+ * R (>=3.0; https://www.r-project.org/)
+ * The Bio3D R packages
+    * Install the bio3d R package from CRAN (>=2.3-4) (http://thegrantlab.org/bio3d/): Within R, type `install.packages("bio3d")`
+    * For path analysis, you may also need to install the latest bio3d.core and bio3d.cna packages. Check https://bitbucket.org/Grantlab/bio3d/ for instructions.
+ * The igraph R package (>=1.1.1; http://igraph.org/r/): `install.packages("igraph")`
  * VMD [Optional] (>=1.9.3; http://www.ks.uiuc.edu/Research/vmd/)
 
 
