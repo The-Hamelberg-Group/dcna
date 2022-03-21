@@ -133,9 +133,13 @@ prunenet <- function(net, cutoff=0.005, ncom=NULL) {
 }
 
 plot_community <- function(net, pdb, layout=NULL, fcut=0.1, interactive=TRUE, 
-   mag.edge=10, mag.vertex=1) {
-  vmd(net, pdb, vmdfile='network.vmd', pdbfile='network.pdb')
-  wt <- E(net$community.network)$weight
+   mag.edge=10, mag.vertex=1, ...) {
+
+  wt <- abs(E(net$community.network)$weight)
+  col <- E(net$community.network)$color
+  col[!col %in% c("blue", "red")] <- "silver"
+  args <- bio3d:::.arg.filter(list(vmdfile='network.vmd', pdbfile='network.pdb', col.lines=col, weights=wt), vmd.cna, ...)
+  do.call(vmd, c(list(x=net, pdb=pdb), args))
   elabel <- round(wt, 1)
   elabel[abs(wt) < fcut] <- ''
   if(is.null(layout)) {
