@@ -146,3 +146,11 @@ plot_community <- function(net, pdb, layout=NULL, fcut=0.1, interactive=TRUE,
         interactive=interactive, edge.label=elabel)
   } 
 }
+
+## convert a matrix (e.g., a sparse matrix) into full contact list
+mat2f <- function(m) {
+   m <- as.matrix(m)
+   inds <- which(lower.tri(m, diag=TRUE),  arr.ind=TRUE)
+   data.frame(x=inds[, 2], y=inds[, 1], f=t(m)[lower.tri(m, diag=TRUE)])
+}
+
